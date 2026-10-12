@@ -108,13 +108,7 @@ Verificación manual en el MikroTik:
  
 - Clave incorrecta: `export LAB_PASS_MT_LAB=mala` → el equipo aparece con `error: autenticación` y el script no se detiene.
 - Sin conectividad (equipo apagado, IP incorrecta o VPN caída) → `error: timeout`.
-## Limitaciones conocidas
- 
-- **Cisco IOS 3725 (extra multivendor):** no se logró la conexión SSH. El IOS solo ofrece un
-  algoritmo de intercambio de claves antiguo que `paramiko` no acepta por defecto
-  (`no acceptable kex algorithm`). El equipo se deja comentado en el inventario y el script
-  no depende de él.
-- Extra REST (SSH vs. REST): no realizado.
+
 ## Declaración de uso de IA
  
 Se utilizó **Claude (Anthropic)** como asistente de apoyo únicamente para:
