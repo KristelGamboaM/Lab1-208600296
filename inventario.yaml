@@ -7,3 +7,9 @@ equipos:
     device_type: mikrotik_routeros
     usuario: lab-ssh
     rol: escritura
+
+ -  nombre: Cisco
+    host: 10.60.30.203
+    device_type: cisco_ios
+    usuario: lab-ssh
+    rol: lectura

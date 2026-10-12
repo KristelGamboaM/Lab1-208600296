@@ -3,5 +3,4 @@ venv/
 __pycache__/
 *.pyc
 .env
-logs/*.log
-!logs/.gitkeep
+
