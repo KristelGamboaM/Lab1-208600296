@@ -1,7 +1,7 @@
 # Laboratorio 1: Inventario, estado y configuración segura con Python + SSH (Netmiko)
  
 **Curso:** ITIEL-13 - Redes Programables (Grupo 01) · **Profesor:** Randall Zamora Rojas
-**Estudiante:** Kristel Gamboa · **Carné:** 208600296 · **Número de lista (N):** 12
+**Estudiante:** Kristel Gamboa · **Carnet:** 208600296 · **Número de lista (N):** 12
  
 Script en Python que lee un inventario YAML, se conecta por SSH con Netmiko a los equipos
 del laboratorio GNS3, recolecta su estado como datos estructurados (JSON) y asegura en el
@@ -38,7 +38,6 @@ pip install -r requirements.txt
  
 ```yaml
 estudiante: 12                   # su número de lista N
-nombre_estudiante: "Kristel Gamboa"    # va en el comentario de lo-ssh-N
  
 equipos:
   - nombre: mt-lab
