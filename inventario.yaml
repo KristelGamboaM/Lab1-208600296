@@ -7,6 +7,7 @@ equipos:
     device_type: mikrotik_routeros
     usuario: lab-ssh
     rol: escritura
+    rest: https://10.60.30.202/rest   # extra: API REST del MikroTik
 
  -  nombre: Cisco
     host: 10.60.30.203

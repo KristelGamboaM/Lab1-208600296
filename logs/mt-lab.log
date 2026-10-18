@@ -4142,22 +4142,22 @@ Press F1 for help
 
 [lab-ssh@mt-lab] > /system resource print
 
-                   uptime: 1h16m56s
+                   uptime: 33m56s
                   version: 7.16 (stable)
                build-time: 2024-09-20 13:00:27
          factory-software: 7.1
-              free-memory: 171.4MiB
+              free-memory: 172.2MiB
              total-memory: 384.0MiB
                       cpu: QEMU
                 cpu-count: 1
             cpu-frequency: 2611MHz
-                 cpu-load: 3%
+                 cpu-load: 1%
            free-hdd-space: 71.2MiB
           total-hdd-space: 89.2MiB
-  write-sect-since-reboot: 592
-         write-sect-total: 592
+  write-sect-since-reboot: 1280
+         write-sect-total: 1280
         architecture-name: x86_64
-               board-name: CHR QEMU Ubuntu 24.04 PC (i440FX + PIIX, 1996)
+               board-name: CHR QEMU Ubuntu 24.04 PC v2 (i440FX + PIIX, arch_caps fix, 1996)
                  platform: MikroTik
 
 
@@ -4170,6 +4170,8 @@ Press F1 for help
 [lab-ssh@mt-lab] > /ip address print terse
 
 0 address=10.60.30.202/24 network=10.60.30.0 interface=ether1 actual-interface=ether1
+1 comment=est12 address=10.12.1.1/24 network=10.12.1.0 interface=ether2 actual-interface=ether2
+2 comment=Kristel Gamboa (N=12) address=10.253.0.12/32 network=10.253.0.12 interface=lo-ssh-12 actual-interface=lo-ssh-12
 
 
 
@@ -4183,6 +4185,61 @@ Press F1 for help
 
 0 As dst-address=0.0.0.0/0 routing-table=main gateway=10.60.30.1 immediate-gw=10.60.30.1%ether1 distance=1 scope=30 target-scope=10
 
+
+
+
+[lab-ssh@mt-lab] > 
+
+
+
+
+[lab-ssh@mt-lab] > :put [:len [/interface bridge find name="lo-ssh-12"]]
+
+1
+
+
+
+[lab-ssh@mt-lab] > 
+
+
+
+
+[lab-ssh@mt-lab] > :put [:len [/interface bridge find name="lo-ssh-12" comment="Kristel Gamboa (N=12)"]]
+
+1
+
+
+
+[lab-ssh@mt-lab] > 
+
+
+
+
+[lab-ssh@mt-lab] > :put [:len [/ip address find address="10.253.0.12/32" interface="lo-ssh-12"]]
+
+1
+
+
+
+[lab-ssh@mt-lab] > 
+
+
+
+
+[lab-ssh@mt-lab] > :put [:len [/interface bridge find name="lo-ssh-12" comment="Kristel Gamboa (N=12)"]]
+
+1
+
+
+
+[lab-ssh@mt-lab] > 
+
+
+
+
+[lab-ssh@mt-lab] > :put [:len [/ip address find address="10.253.0.12/32" interface="lo-ssh-12"]]
+
+1
 
 
 

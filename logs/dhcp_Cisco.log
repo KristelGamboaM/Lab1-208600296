@@ -1,0 +1,47 @@
+
+cisco-lab1>
+cisco-lab1>terminal width 511
+cisco-lab1>terminal length 0
+cisco-lab1>
+cisco-lab1>
+cisco-lab1>enable
+Password: 
+cisco-lab1#
+cisco-lab1#
+cisco-lab1#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+cisco-lab1(config)#
+cisco-lab1(config)#interface FastEthernet1/0
+cisco-lab1(config-if)#ip address 192.168.10.1 255.255.255.0
+cisco-lab1(config-if)#no shutdown
+cisco-lab1(config-if)#exit
+cisco-lab1(config)#ip dhcp excluded-address 192.168.10.1 192.168.10.99
+cisco-lab1(config)#ip dhcp pool LAN-PC1
+cisco-lab1(dhcp-config)#network 192.168.10.0 255.255.255.0
+cisco-lab1(dhcp-config)#default-router 192.168.10.1
+cisco-lab1(dhcp-config)#dns-server 8.8.8.8
+cisco-lab1(dhcp-config)#lease 0 1
+cisco-lab1(dhcp-config)#exit
+cisco-lab1(config)#ip route 192.168.20.0 255.255.255.0 10.60.30.202
+cisco-lab1(config)#
+cisco-lab1(config)#end
+cisco-lab1#
+cisco-lab1#
+cisco-lab1#
+cisco-lab1#write mem
+Building configuration...
+[OK]
+cisco-lab1#
+cisco-lab1#show ip dhcp pool
+
+Pool LAN-PC1 :
+ Utilization mark (high/low)    : 100 / 0
+ Subnet size (first/next)       : 0 / 0 
+ Total addresses                : 254
+ Leased addresses               : 0
+ Pending event                  : none
+ 1 subnet is currently in the pool :
+ Current index        IP address range                    Leased addresses
+ 192.168.10.1         192.168.10.1     - 192.168.10.254    0
+cisco-lab1#
+cisco-lab1#exit
